@@ -1,0 +1,38 @@
+[
+    {
+        "period": "The era of Dinosaursars",
+        "date": "Over 100,000,000 Years Ago",
+        "description": "The “Era of Dinosaurs” begins, as dinosaurs rule the world, populated by many ancient species. This era lasts for over 100,000,000 years until it comes to an end as dinosaurs diminish across the world, though some species continue to survive",
+        "references": [
+            {
+                "source": "Chapter 1028",
+                "description": "Queen mentions dinosaurs having ruled the world for over a hundred million years. Meaning that their era must’ve started over a hundred million years ago, which fits with the equivalent timeline of our world where dinosaurs lived between 250 to 65 million years ago"
+            },
+            {
+                "source": "Chapter 115",
+                "description": "Vivi refers to that time as the “Era of Dinosaurs”, 交流達の時代, and the larger period as “Prehistory”, 大古)"
+            }
+        ]
+    },
+    {
+        "period": "ANCIENT HISTORY",
+        "date": "Around 5000 years ago",
+        "description": "A tree that would come to be known as the “Tree of Omniscience” sprouts on what would be called Ohara Island",
+        "references": [
+            {
+
+                "source": "Chapter 392",
+                "description": "Clover mentions the tree of omniscience being 5000 years old. Clover mentions it has long been used as a library, though the 5000 years refers to the age of the tree, not the age of the library"
+            }
+        ]
+    },
+    {
+        "period": "ANCIENT HISTORY",
+        "date": "",
+        "description":,
+        "references": [
+            "source":,
+            "description":
+        ]
+    }
+]
