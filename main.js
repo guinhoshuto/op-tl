@@ -1,6 +1,5 @@
 const fs = require('fs');
 const readline = require('readline');
-import tl from './output.json'
 
 let period = ""
 let record;
@@ -27,14 +26,14 @@ async function processLineByLine() {
       source = source.substring(0, source.length-1)
       let r = {
         period: period, 
-        date: record.map((r, i) => {
+        date: record[0],
+        description: record.map((r, i) => {
           if(i === record.length - 1){
             return ""
           } else {
             return r
           }
         }).join(""), 
-        description: record[1], 
         source: source 
       }
       fs.appendFileSync("output.json", JSON.stringify(r, null, 2));
@@ -42,14 +41,14 @@ async function processLineByLine() {
   }
 }
 
-// processLineByLine();
+processLineByLine();
 
 function getSourceLocation(str){
   return str.replace(/[^(]/g, "").length
 }
 
-(async () => {
-  // const tl = await fetch('output.json')
-  console.log(tl)
-  // console.log(tl)
-})()
+// (async () => {
+//   // const tl = await fetch('output.json')
+//   console.log(tl)
+//   // console.log(tl)
+// })()
