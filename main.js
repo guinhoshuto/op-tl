@@ -1,8 +1,10 @@
 const fs = require('fs');
 const readline = require('readline');
+import tl from './output.json'
 
 let period = ""
 let record;
+let source;
 
 async function processLineByLine() {
   const fileStream = fs.createReadStream('raw');
@@ -20,28 +22,34 @@ async function processLineByLine() {
 
     if(line.includes(" – ")){
     if(line.includes(""))
-      record = line.split(" – ")
+      record = line.split(" – ", 2)
+      source = record[1].split("(")[getSourceLocation(record[1])]
+      source = source.substring(0, source.length-1)
       let r = {
-        period: period,
-        date: record[0],
-        description: record[1]
+        period: period, 
+        date: record.map((r, i) => {
+          if(i === record.length - 1){
+            return ""
+          } else {
+            return r
+          }
+        }).join(""), 
+        description: record[1], 
+        source: source 
       }
       fs.appendFileSync("output.json", JSON.stringify(r, null, 2));
     }
   }
 }
 
-processLineByLine();
+// processLineByLine();
 
-//note:
+function getSourceLocation(str){
+  return str.replace(/[^(]/g, "").length
+}
 
-
-// let page_token = ""; 
-// let allSubs = []; 
-// while (page_token !== undefined) {
-//   let subs = await hotmartAuth.getSubscriptions(page_token);
-//   page_token = subs.page_info.next_page_token;
-//   let items = subs.items;
-//   allSubs = [...allSubs, ...items];
-//   fs.writeFileSync("output.json", JSON.stringify(allSubs, null, 2));
-// }
+(async () => {
+  // const tl = await fetch('output.json')
+  console.log(tl)
+  // console.log(tl)
+})()
