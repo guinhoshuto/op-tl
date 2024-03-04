@@ -6,7 +6,7 @@ let record;
 let source;
 
 async function processLineByLine() {
-  const fileStream = fs.createReadStream('raw');
+  const fileStream = fs.createReadStream('./raw');
 
   const rl = readline.createInterface({
     input: fileStream,
@@ -28,7 +28,7 @@ async function processLineByLine() {
         period: period, 
         date: record[0],
         description: record.map((r, i) => {
-          if(i === record.length - 1){
+          if(i === record.length - 2){
             return ""
           } else {
             return r

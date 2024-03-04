@@ -1,0 +1,22 @@
+{
+  "name": "op-tl-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate-timeline-json.js",
+  "scripts": {
+    "start": "node build/server/main.js",
+    "dev": "tsx watch server/main.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jsonfile": "^6.1.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.24",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.2",
+    "jsonfile": "^6.1.0"
+  }
+}
